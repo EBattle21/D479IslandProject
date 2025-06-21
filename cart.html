@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name ="viewport" content ="width=device-width, initial-scale=1.0" />
+        <title> Taniti Island Cart</title>
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Island+Moments&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+
+        <nav>
+            <a href="index.html"> Home</a>
+            <a href="guide.html">How Things Work</a>
+            <a href="activities.html"> Activities</a>
+            <a href="faq.html"> FAQs</a>
+            <a href="login.html">Login / Sign Up </a> 
+        </nav>
+
+        <!--Cart Items-->
+        <section class="cart-items" id="cart-items">
+        <div class="cart-item" data-price="$100" data-name="Aurelia by the Sea">
+            <img src="" alt="Attraction 1" class="attraction-image" />
+            <p>Attraction 1<br>$</p>
+        </div>
+
+            <div class="cart-item" data-price="$200">
+            <img src="" alt="Attraction 2" class="attraction-image" />
+            <p>Attraction 1<br>$</p>
+        </div>
+
+           <div class="cart-item" data-price="$250">
+            <img src="" alt="Attraction 3" class="attraction-image" />
+            <p>Attraction 1<br>$</p>
+        </div>
+
+            <div class="cart-item" data-price="$300">
+            <img src="" alt="Attraction 4" class="attraction-image" />
+            <p>Attraction 1<br>$</p>
+        </div>
+        </section>
+
+        <!-- Bundle Discount + Total -->
+         <section class="bundle-discount">
+            <p>IF BUNDLED TOGETHER SAVE 50%!</p>
+            <p id="total-display">TOTAL = $0</p>
+            <button id="quick-checkout-btn" class="primary">Quick Checkout</button>
+            <button id="clear-cart-btn" class="primary secondary">Clear Cart</button>
+        </section>
+
+
+    <!-- JS for Cart Functionality -->
+    <script>
+    function displayCart() {
+        const cartItemsContainer = document.getElementById('cart-items');
+        const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+
+        cartItemsContainer.innerHTML = '';
+
+        let total = 0;
+
+        cart.forEach(item => {
+            const itemDiv = document.createElement('div');
+            itemDiv.className = 'cart-item';
+            itemDiv.innerHTML = `
+            <div class="cart-image">
+            <img src="${item.image}" alt="${item.name}" style="width: 150px; height: auto;" />
+        </div>
+                <p>${item.name}<br>$${item.price}</p>
+            `;
+
+            cartItemsContainer.appendChild(itemDiv);
+
+            total += parseFloat(item.price);
+        });
+
+        // Apply 50% discount
+        const discountedTotal = total * 0.5;
+
+        document.getElementById('total-display').innerText = `TOTAL = $${discountedTotal.toFixed(2)}`;
+    }
+    //fake quick checkout confirmation
+    
+    document.getElementById('quick-checkout-btn').addEventListener('click', () => {
+        if (confirm('Proceed to quick checkout?')) {
+            alert('Checkout successful! Thank you for booking Taniti experiences.');
+            sessionStorage.removeItem('cart');
+            displayCart(); 
+        }
+    });
+    
+    // Run displayCart when page loads
+    window.onload = displayCart;
+    
+    // Clear Cart button functionality
+    document.getElementById('clear-cart-btn').addEventListener('click', () => {
+        if (confirm('Are you sure you want to clear the cart?')) {
+            sessionStorage.removeItem('cart');
+            displayCart(); // Refresh display
+            alert('Cart cleared!');
+        }
+    });
+</script>
+<footer class="site-footer">
+            <div class="footer-content">
+               <div class="footer-section">
+                  <h4>Explore Taniti</h4>
+                  <ul>
+                     <li><a href="index.html">Home</a></li>
+                     <li><a href="guide.html">How It Works</a></li>
+                     <li><a href="activities.html">Activities</a></li>
+                     <li><a href="faq.html">FAQs</a></li>
+                  </ul>
+               </div>
+               
+               <div class="footer-section">
+                  <h4>Help</h4>
+                  <ul>
+                     <li><a href="faq.html">Support</a></li>
+                     <li><a href="login.html">Login / Sign Up</a></li>
+                     <li><a href="cart.html">View Cart</a></li>
+                  </ul>
+               </div>
+               <div class="footer-section">
+                  <h4>Contact</h4>
+                  <p>📍 Taniti Island, South Pacific</p>
+                  <p>📞 559-999-9999</p>
+                  <p>✉️ support@littlebittytaniti.com</p>
+               </div>
+            </div>
+            <div class="footer-bottom">
+               <p>&copy; 2025 Taniti Tourism Board. All rights reserved.</p>
+            </div>
+         </footer>
+
+    </body>
+</html>

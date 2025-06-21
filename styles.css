@@ -1,0 +1,395 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .featured-attractions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .featured-attractions {
+    grid-template-columns: 1fr;
+  }
+}
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #FAF3E0;
+  color: #93C8CC;
+  line-height: 1.5;
+  padding-bottom: 2rem;
+}
+
+/* Navigation Bar */
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #93C8CC;
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #165396;
+  font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+}
+
+.hero-content {
+  position: relative;
+}
+
+.hero-content img {
+  width: 100%;
+  display: block;
+}
+
+.hero-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-family: "Island Moments", cursive;
+  font-size: 85px;
+}
+
+.hero input {
+  width: 80%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+
+.hero button {
+  margin-left: -40px;
+  border: none;
+  background: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: white;
+}
+
+/* Search Box */
+.search-box {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 20px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  font-size: 1rem;
+}
+
+.search-box button {
+  padding: 5px;
+  border: none;
+  background-color: #93C8CC;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  height: 75px;
+  width: 55px;
+}
+
+/* About Section */
+.about {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.about h2 {
+  margin-bottom: 0.5rem;
+}
+
+/* Contact Options */
+.contact-options {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+}
+
+.contact-options button {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #93C8CC;
+  color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+/* Primary Button */
+button.primary {
+  display: block;
+  margin: 1rem auto;
+  padding: 0.8rem 1.2rem;
+  background-color: #93C8CC;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Featured Attractions */
+.featured-attractions {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+}
+
+.featured-attractions .attraction {
+  width: 30%;
+  background-color: #93C8CC;
+  aspect-ratio: 1/1;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.attraction img {
+  width: 100%;
+  border-radius: 8px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  float: left;
+  margin-right: 10px;
+}
+
+/* Cart & Activities Listings */
+.cart-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: rgba(124, 197, 202, 0.1);
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.cart-item .attraction-image {
+  width: 300px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.cart-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #93C8CC;
+}
+
+.cart-details p {
+  margin-bottom: 1rem;
+}
+
+.cart-details button {
+  align-self: flex-start;
+}
+
+.bundle-discount {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 1rem;
+}
+
+.bundle-discount p {
+  margin: 0.5rem 0;
+}
+
+.bundle-discount button.primary {
+  margin-top: 1rem;
+}
+
+/* Login Form */
+.login-form {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.login-form h2 {
+  margin-bottom: 1rem;
+}
+
+.login-form input {
+  width: 90%;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.login-form button {
+  margin-top: 1rem;
+}
+
+/* Attraction Images in Listings */
+.attraction-image {
+  width: 25%;
+  border-radius: 8px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #165396;
+  margin: 2rem auto 1rem;
+}
+
+.tourist-guide {
+  max-width: 900px;
+  margin: auto;
+  padding: 1rem 2rem;
+  background-color: rgba(147, 200, 204, 0.05);
+  border-radius: 12px;
+}
+
+.guide-section {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.guide-step {
+  margin-bottom: 2rem;
+}
+
+.guide-step h3 {
+  color: #165396;
+  margin-bottom: 0.5rem;
+}
+
+.guide-step p {
+  color: #555;
+  line-height: 1.6;
+}
+/* FAQ Updates  */
+.transportation {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  flex-wrap: wrap;
+}
+.transportation-image {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.transportation-details {
+  max-width: 600px;
+  color: #93C8CC;
+
+}
+/* Footer */
+.site-footer {
+  background-color: #93C8CC;
+  color: #fff;
+  padding: 2rem 1rem 1rem;
+  font-size: 0.9rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  margin: 1rem;
+  min-width: 200px;
+}
+
+.footer-section h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #165396;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.3rem;
+}
+
+.footer-section a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  color: #165396;
+}
+/* Forgotten CSS */
+.add-to-cart-btn {
+display: block;
+  margin: 1rem auto;
+  padding: 0.8rem 1.2rem;
+  background-color: #93C8CC;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.tourist {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: rgba(124, 197, 202, 0.1);
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
